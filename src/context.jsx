@@ -3,16 +3,32 @@ import { reducer } from "./reducer";
 
 
 const initialState = {
-  news: []
+  query: '',
+  news: [],
+  isLoading : true
 }
-
 const AppContext = React.createContext()
 
 const AppProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
+
+  const getNews = async(queryData) => {
+    const response = await fetch(
+      `https://hn.algolia.com/api/v1/search?query=${queryData}`
+    );
+    const data = await response.json();
+    console.log(data)
+    dispatch({type: 'FetchSuccess', payload: data.hits})
+  }
+
+    const searchHandler = (query) => {
+      dispatch({type: 'QueryHandle', payload: query})
+      getNews(query)
+    }
+
     return (
-    <AppContext.Provider value = {{...state}}>
+    <AppContext.Provider value = {{...state, searchHandler, getNews}}>
       {children}
     </AppContext.Provider>
     )

@@ -1,15 +1,23 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from './Home';
+import SingleNews from './SingleNews';
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
-    <div className="App">
-      
-    </div>
-  )
+    <Router>
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/:id">
+          <SingleNews />
+        </Route>
+      </Switch>
+    </Router>
+  );
 }
 
 export default App
