@@ -166,6 +166,10 @@ Search
     margin-top: 1.3rem;
 }
 
+.searchBtn:hover {
+    cursor: pointer;
+}
+
 
 /*     Single New       */
 .news-parent{
@@ -237,6 +241,8 @@ Buttons
 .btn-container button:disabled {
   cursor: not-allowed;
 }
+
+
 
 /*
 =============== 

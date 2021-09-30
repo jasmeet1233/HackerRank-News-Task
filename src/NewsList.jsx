@@ -7,7 +7,6 @@ const NewsList = () => {
 
     if(isLoading) return <div className = 'loading'></div>
 
-    // const {author} = news 
     return (
         <section className = 'stories'>
             {
