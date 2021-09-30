@@ -5,25 +5,25 @@ import { Link } from "react-router-dom";
 const NewsList = () => {
     const {query, isLoading, news} = useGlobalContext();
 
-    if(isLoading) return <h3>Loading</h3>
+    if(isLoading) return <div className = 'loading'></div>
 
     // const {author} = news 
     return (
-        <div>
+        <section className = 'stories'>
             {
             news.map((item) => {
                 return (
-                  <div className="flex-child">
-                    <h3>{item.title}</h3>
-                    <p className="genre">{item.author}</p>
-                    <Link to={`/${item.objectID}`}>
-                      <button>Know more</button>
+                  <div  key = {item.objectID} className = 'story'>
+                    <h4>{item.title}</h4>
+                    <p className="info">{item.points} points | By {item.author} | {item.num_comments} comments </p>
+                    <Link to={`/${item.objectID}`} className = 'read-link'>
+                      Read More
                     </Link>
                   </div>
                 );
             })
             }
-        </div>
+        </section>
     )
 }
 

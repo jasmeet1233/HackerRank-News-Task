@@ -7,12 +7,11 @@ const Home = () => {
   const {query, getNews} = useGlobalContext()
 
   useEffect(() => {
-    getNews(query)
+    getNews('React')
   },[])
 
     return (
-        <div>
-          <h2>HackerNews</h2> 
+        <div> 
           <SearchBar />
           <NewsList />
         </div>
