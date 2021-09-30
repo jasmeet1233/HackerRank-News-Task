@@ -4,8 +4,6 @@ import ReactHtmlParser from "react-html-parser";
 import { useGlobalContext } from "./context";
 import {AiFillHome} from 'react-icons/ai'
 
-/// filter se i'll take title and points.
-// comments il take from firebase one
 
 const SingleNews = () => {
     const [newsInfo, setNewsInfo] = useState([]);
@@ -26,7 +24,6 @@ const SingleNews = () => {
         getSingleNews(id)
     },[])
 
-    // const movie 
 
     if(loading) return <div className = 'loading'></div>
   return (
