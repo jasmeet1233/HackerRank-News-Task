@@ -184,11 +184,11 @@ Search
 
 .comments {
     text-align: start;
-    border: 1px solid black;
     border-radius: 1.5rem;
     padding: .4rem;
     margin: 1rem;
     overflow: hidden;
+    background-color: var(--clr-white);
 }
 
 
