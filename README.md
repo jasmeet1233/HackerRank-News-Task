@@ -2,6 +2,6 @@ HackerNews Website:
 Made with ReactJS.
 Used HackerNews API.
 
-Check out the project live on : https://7z2jv.sse.codesandbox.io/
+Check out the project live on : https://xfu39.csb.app/
 
 Use npm run build 
